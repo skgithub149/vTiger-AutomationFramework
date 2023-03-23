@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Suite">
+	
+  <test thread-count="2" parallel="tests" name="Test-Runner1">
+    <classes>
+      <class name="test.leads.CreateDuplicateLeadTest"/>
+      <class name="test.organizations.CreateOrganizationWithIndustryTest"/>
+      <class name="test.contacts.CreateContactWithOrganizationTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+    <test thread-count="2" parallel="tests" name="Test-Runner2">
+    <classes>
+      <class name="test.contacts.CreateContactTest"/>
+      <class name="test.leads.CreateLeadTest"/>
+      <class name="test.organizations.CreateOrganizationTest"/>
+      <class name="test.organizations.CreateOrganizationWithIndustryAndTypeTest"/>
+    </classes>
+  </test> <!-- Test -->
+
+</suite> <!-- Suite -->

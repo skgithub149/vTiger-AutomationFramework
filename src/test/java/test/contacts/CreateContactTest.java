@@ -3,6 +3,7 @@ package test.contacts;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import genericUtility.BaseClass;
@@ -11,8 +12,10 @@ import objectRepository.ContactsPage;
 import objectRepository.CreatingNewContactPage;
 import objectRepository.HomePage;
 
+@Listeners(genericUtility.ListenersImplementation.class)
 public class CreateContactTest extends BaseClass {
-	@Test
+	
+	@Test(groups = "SmokeSuite")
 	public void createContactTest() throws EncryptedDocumentException, IOException {
 
 		// Step 1:Read data from excel file

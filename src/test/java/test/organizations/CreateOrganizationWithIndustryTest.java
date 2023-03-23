@@ -3,6 +3,7 @@ package test.organizations;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import genericUtility.BaseClass;
@@ -11,9 +12,10 @@ import objectRepository.HomePage;
 import objectRepository.OrganizationInfoPage;
 import objectRepository.OrganizationsPage;
 
+@Listeners(genericUtility.ListenersImplementation.class)
 public class CreateOrganizationWithIndustryTest extends BaseClass {
 
-	@Test
+	@Test(groups = { "SmokeSuite", "RegressionSuite" })
 	public void createOrganizationWithIndustryTest() throws EncryptedDocumentException, IOException {
 
 		// Step 1:Read data from excel file

@@ -3,6 +3,7 @@ package test.leads;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import genericUtility.BaseClass;
@@ -11,9 +12,10 @@ import objectRepository.HomePage;
 import objectRepository.LeadInfoPage;
 import objectRepository.LeadsPage;
 
+@Listeners(genericUtility.ListenersImplementation.class)
 public class CreateLeadTest extends BaseClass {
 
-	@Test
+	@Test(groups = { "SmokeSuite", "RegressionSuite" })
 	public void createLeadTest() throws EncryptedDocumentException, IOException {
 
 		// Step 1:Read data from excel file
